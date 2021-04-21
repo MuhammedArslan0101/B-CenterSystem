@@ -1,0 +1,119 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="container">
+
+        <div class="row">
+            <!--Filtreleme-->
+            <div class="col-md-3">
+                <br />
+                <!--Filtreleme-->
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-4 control-label">En Az Maaş </label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" palceholder="En Az(fiyat)">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-4 control-label">En Cok Maaş </label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" palceholder="En Cok(fiyat)">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-4 control-label">Category </label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" palceholder="Type">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-4 control-label">Users </label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" palceholder="Type">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-4 control-label">Type </label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" palceholder="Type">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-4 control-label">City </label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" palceholder="City">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="" class="col-sm-4 control-label"> </label>
+                        <div class="col-sm-6">
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> Filitreleme</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+
+
+            <br />
+            <div class="col-md-9">
+                <div class="thumbnail" style="width:845px ; height: 400px;">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"> <a href="/AdminPanel/Index"> Admin Panel</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Admin List</li>
+                        </ol>
+                    </nav>
+
+                    <div class="col-md-3">
+
+                        <div class="thumbnail">
+                            <img src="~/Content/images/logos/icons8-advertisement-page-100.png" style="border:0; height:50px" />
+                            <div class="caption">
+                                <p>@Html.ActionLink("Advertisement List", "", "", null, new { @class = "btn btn-success btn-block" })</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="thumbnail">
+                            <img src="~/Content/images/logos/icons8-city-buildings-100.png" style="border:0; height:50px" />
+                            <div class="caption">
+                                <p>@Html.ActionLink("Category", "Index", "Category", null, new { @class = "btn btn-danger btn-block" })</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="thumbnail">
+                            <img src="~/Content/images/logos/icons8-database-restore-64.png" style="border:0; height:50px" />
+                            <div class="caption">
+                                <p>@Html.ActionLink("Users List", "Index", "Users", null, new { @class = "btn btn-primary btn-block" })</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3">
+                        <div class="thumbnail">
+                            <img src="~/Content/images/logos/icons8-type-100.png" style="border:0; height:50px" />
+                            <div class="caption">
+                                <p>@Html.ActionLink("AppliedJobs  List", "Index", "", null, new { @class = "btn btn-primary btn-block" })</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="thumbnail">
+                            <img src="~/Content/images/logos/icons8-link-100.png" style="border:0; height:50px" />
+                            <div class="caption">
+                                <p>@Html.ActionLink("FooterLink List", "Index", "FooterLink", null, new { @class = "btn btn-warning btn-block" })</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

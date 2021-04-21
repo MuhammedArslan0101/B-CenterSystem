@@ -1,0 +1,22 @@
+﻿
+   
+        @foreach (var item in ViewBag.adv)
+        {
+       <div class="col-sm-6 col-md-3">
+        <div class="thumbnail">
+            <img src="/Content/images/@item.Image" alt="..." style="height:300px;">
+            <div class="caption">
+                <p style="text-align:center;"><strong> @item.JobName </strong></p>
+                <p><strong>@item.Category</strong> (@item.Tip) </p>
+                <p>@item.City</p>
+                <p>
+                    <button class="btn btn-danger"><i class="fa fa-usd" aria-hidden="true"></i> @item.maas</button>
+                    <button class="btn btn-success pull-right"><i class="fa fa-info-circle" aria-hidden="true"></i> Details</button>
+
+                </p>
+            </div>
+        </div>
+    </div>
+        }
+
+      

@@ -1,0 +1,28 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+    @Html.AntiForgeryToken()
+
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            @Html.ActionLink("Merhaba: " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage"  , @style= "color: #e7e7e7; font-family: myFont;" })
+        </li>
+
+        <li>
+            <a href="/AdminPanel/Index" style=" color: #e7e7e7; font-family: myFont;" class="btn btn-success">
+                Admin Panel
+            </a>
+        </li>
+        <li><button href="javascript:document.getElementById('logoutForm').submit()"  class="btn btn-danger" style="margin-top:12px; margin-left:5px;">Log off</button></li>
+    </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li style=" color: #e7e7e7; font-family: myFont;">@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @style = "color: #e7e7e7; font-family: myFont;" })</li>
+        <li style=" color: #e7e7e7; font-family: myFont;" >@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @style = "color: #e7e7e7; font-family: myFont;" })</li>
+    </ul>
+}
