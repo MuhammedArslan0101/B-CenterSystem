@@ -2293,6 +2293,10 @@
     <Content Include="Views\Adv\Index.cshtml" />
     <Content Include="Views\Adv\Add.cshtml" />
     <Content Include="Views\Adv\advPartial.cshtml" />
+    <Content Include="Views\Home\Search.cshtml" />
+    <Content Include="Views\Shared\SearchPartial.cshtml" />
+    <Content Include="Views\Home\Filter.cshtml" />
+    <Content Include="Views\Home\PartialFilter.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

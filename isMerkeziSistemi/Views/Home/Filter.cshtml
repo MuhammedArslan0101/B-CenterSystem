@@ -1,0 +1,97 @@
+﻿@model IEnumerable<isMerkeziSistemi.Entities.Advertisment>
+
+@{
+    ViewBag.Title = "Filter";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="container">
+
+        <div class="row">
+            <!--Filtreleme-->
+            
+
+
+                <div class="col-md-3">
+                    @using (Html.BeginForm("Filter", "Home", FormMethod.Get, new { @class = "form-horizontal" }))
+                    {
+
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-4 control-label">En Az Maaş </label>
+                                <div class="col-sm-6">
+                                    <input type="text" name="min" class="form-control" palceholder="En Az(fiyat)">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-4 control-label">En Cok Maaş </label>
+                                <div class="col-sm-6">
+                                    <input type="text" name="max" class="form-control" palceholder="En Cok(fiyat)">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-4 control-label">Category </label>
+                                <div class="col-sm-6">
+                                    <input type="text" name="category" class="form-control" palceholder="Type">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-4 control-label">Type </label>
+                                <div class="col-sm-6">
+                                    <input type="text" name="tip" class="form-control" palceholder="Type">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-4 control-label">City </label>
+                                <div class="col-sm-6">
+                                    <input type="text" name="city" class="form-control" palceholder="City">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="" class="col-sm-4 control-label"> </label>
+                                <div class="col-sm-6">
+                                    <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> Filitreleme</button>
+                                </div>
+                            </div>
+                        </form>
+
+
+                    }
+                </div>
+         
+            <!--ilan kısım-->
+
+            <br />
+
+
+
+            @foreach (var item in Model)
+            {
+                <div class="col-sm-9 col-md-3">
+                    <div class="thumbnail">
+                        <img src="/Content/images/@item.Image" alt="..." style="height:300px;">
+                        <div class="caption">
+                            <p style="text-align:center;"><strong> @item.JobName </strong></p>
+                            <p><strong>@item.Category</strong> (@item.Tip) </p>
+                            <p>@item.City</p>
+                            <p>
+                                <button class="btn btn-danger"><i class="fa fa-usd" aria-hidden="true"></i> @item.maas</button>
+                                <button class="btn btn-success pull-right"><i class="fa fa-info-circle" aria-hidden="true"></i> Details</button>
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+
+
+
+
+        </div>
+
+    </div>
+

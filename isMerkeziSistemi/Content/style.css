@@ -121,7 +121,7 @@ body{
     font-size: 0.9rem;
 }
 
-/*Start whatsapp CSS */
+/*whatsapp CSS */
 .whatsapp_float {
     position: fixed;
     width: 60px;
@@ -154,7 +154,9 @@ body{
         font-size: 22px;
     }
 }
-/*End Whatsapp CSS*/
+/*Whatsapp CSS*/
+
+
 /*Scrollback to top*/
 #myBtn {
     display: none;

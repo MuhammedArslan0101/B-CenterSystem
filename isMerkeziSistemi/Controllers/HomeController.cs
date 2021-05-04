@@ -1,8 +1,11 @@
-﻿using isMerkeziSistemi.Models;
+﻿using isMerkeziSistemi.Entities;
+using isMerkeziSistemi.Models;
+using MongoDB.Driver;
 using Newtonsoft.Json;
 using RestSharp;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
@@ -13,7 +16,43 @@ namespace isMerkeziSistemi.Controllers
 {
     public class HomeController : Controller
     {
+        private MongoClient mongoClient;
+        private IMongoCollection<Advertisment> advCollection;
 
+        public HomeController()
+        {
+            mongoClient = new MongoClient(ConfigurationManager.AppSettings["mongoDBHost"]);
+            var db = mongoClient.GetDatabase(ConfigurationManager.AppSettings["mongoDBName"]);
+            advCollection = db.GetCollection<Advertisment>("jobs");
+
+        }
+
+        public ActionResult Filter(int? min, int? max , string category , string city , string tip )
+        {
+            var filter = advCollection.AsQueryable<Advertisment>();
+            filter = (MongoDB.Driver.Linq.IMongoQueryable<Advertisment>)filter.Where(
+                x => x.maas >= min || x.maas <= max
+                || x.Category == category
+                || x.Tip == tip
+                || x.City == city);
+
+            return View(filter);
+
+        }
+          
+
+        public ActionResult Search(string s)
+        {
+            var search = advCollection.AsQueryable<Advertisment>() ;
+            
+            if (!string.IsNullOrEmpty(s))
+            {
+                search = (MongoDB.Driver.Linq.IMongoQueryable<Advertisment>)search.Where(i => i.JobName.Contains(s) || i.Category.Contains(s)
+                 || i.City.Contains(s) || i.Tip.Contains(s));
+            }
+
+            return View(search.ToList());
+        }
 
         public ActionResult UserReg()
         {
