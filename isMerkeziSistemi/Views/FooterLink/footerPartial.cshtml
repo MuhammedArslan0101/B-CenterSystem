@@ -1,0 +1,90 @@
+﻿
+
+<!--Footer-->
+<footer class="myfooter">
+    <div class="container">
+
+        @foreach (var item in ViewBag.footerlink)
+        {
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>
+                        <i class="fas fa-question-circle"></i>
+                        Who Us
+                    </h3>
+                    <p>
+                        Muhammed ARSLAN 02160001092
+                        Onur ASLAN 02160001019
+                        Bilgisayar Mğhendisliği 4.sınıf
+
+                    </p>
+                </div>
+
+                <div class="col-md-4">
+                    <section>
+                        <div class="col-md-3">
+                            <iframe src="@item.googleMap"
+                                width="200" height="200" style="border:0;" allowfullscreen="" loading="lazy">
+                            </iframe>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-md-4">
+                    <h3>
+                        <i class="glyphicon glyphicon-envelope"></i>
+                        Keep Contact With Us
+                    </h3>
+                    <h5 class="text" style="color:white">Follow Us </h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <section class="mb-4">
+                                <!-- Facebook -->
+                                <a class="btn btn-primary btn-floating m-1"
+                                   style="background-color: #3b5998;"
+                                   href="@item.facebook" target="_blank"
+                                   role="button">
+                                    <i class="fa fa-facebook-f fa-2x"></i>
+                                </a>
+
+                                <!-- Twitter -->
+                                <a class="btn btn-primary btn-floating m-1"
+                                   style="background-color: #55acee;"
+                                   href="@item.twitter" target="_blank"
+                                   role="button">
+                                    <i class="fa fa-twitter fa-2x"></i>
+                                </a>
+
+
+
+                                <!-- Instagram -->
+                                <a class="btn btn-primary btn-floating m-1"
+                                   style="background-color: #ac2bac;"
+                                   href="@item.instagram" target="_blank"
+                                   role="button">
+                                    <i class="fa fa-instagram  fa-2x"></i>
+                                </a>
+
+                                <!-- youtube -->
+                                <a class="btn btn-primary btn-floating m-1"
+                                   style="background-color: #cf3434;"
+                                   href="www.youtube.com" target="_blank"
+                                   role="button">
+                                    <i class="fa fa-youtube fa-2x"></i>
+                                </a>
+
+                            </section>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+        }
+
+    </div>
+
+
+    <div class="subfooter">
+        <span>Copy Right Muhammed ARSLAN/Onur ASLAN</span>
+    </div>
+</footer>

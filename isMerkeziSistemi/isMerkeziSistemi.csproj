@@ -250,11 +250,13 @@
     <Compile Include="Controllers\AdminPanelController.cs" />
     <Compile Include="Controllers\AdvController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\FooterLinkController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Entities\Advertisment.cs" />
     <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\FooterLink.cs" />
     <Compile Include="Entities\Users.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -263,6 +265,7 @@
     <Compile Include="Models\AdvModel.cs" />
     <Compile Include="Models\CategoryModel.cs" />
     <Compile Include="Models\ContactModel.cs" />
+    <Compile Include="Models\FooterLinkModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\UsersModel.cs" />
@@ -2297,6 +2300,9 @@
     <Content Include="Views\Shared\SearchPartial.cshtml" />
     <Content Include="Views\Home\Filter.cshtml" />
     <Content Include="Views\Home\PartialFilter.cshtml" />
+    <Content Include="Views\FooterLink\Index.cshtml" />
+    <Content Include="Views\FooterLink\Edit.cshtml" />
+    <Content Include="Views\FooterLink\footerPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
