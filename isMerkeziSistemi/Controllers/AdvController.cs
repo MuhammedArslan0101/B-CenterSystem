@@ -28,6 +28,7 @@ namespace isMerkeziSistemi.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public ActionResult Add()
         {
             ViewBag.category = categoryModel.findAll();
@@ -36,6 +37,7 @@ namespace isMerkeziSistemi.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public ActionResult Add(Advertisment a, HttpPostedFileBase file)
         {
             string path = Path.Combine("~/Content/images", file.FileName);
@@ -46,6 +48,7 @@ namespace isMerkeziSistemi.Controllers
             return RedirectToAction("Index");
         }
         [HttpGet]
+        [Authorize]
         public ActionResult Delete(string id)
         {
             advModel.delete(id);

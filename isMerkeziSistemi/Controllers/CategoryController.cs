@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace isMerkeziSistemi.Controllers
 {
+    [Authorize]
     public class CategoryController : Controller
     {
         private CategoryModel categoryModel = new CategoryModel();

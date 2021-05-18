@@ -8,11 +8,13 @@ using System.Web.Mvc;
 
 namespace isMerkeziSistemi.Controllers
 {
+   
     public class FooterLinkController : Controller
     {
         private FooterLinkModel footerLinkModel = new FooterLinkModel();
 
         // GET: FooterLink
+        [Authorize]
         public ActionResult Index()
         {
             ViewBag.footerlink = footerLinkModel.findAll();
@@ -27,6 +29,7 @@ namespace isMerkeziSistemi.Controllers
             return PartialView();
         }
         [HttpGet]
+        [Authorize]
         public ActionResult Add()
         {
 
@@ -34,6 +37,7 @@ namespace isMerkeziSistemi.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public ActionResult Add(FooterLink c)
         {
 
@@ -41,6 +45,7 @@ namespace isMerkeziSistemi.Controllers
             return RedirectToAction("Index");
         }
         [HttpGet]
+        [Authorize]
         public ActionResult Delete(string id)
         {
             footerLinkModel.delete(id);
@@ -49,6 +54,7 @@ namespace isMerkeziSistemi.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public ActionResult Edit(string id)
         {
 
@@ -56,6 +62,7 @@ namespace isMerkeziSistemi.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public ActionResult Edit(FooterLink c, FormCollection fc)
         {
             string id = fc["Id"];

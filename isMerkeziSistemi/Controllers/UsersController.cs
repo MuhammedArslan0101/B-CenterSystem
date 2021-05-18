@@ -8,6 +8,7 @@ using isMerkeziSistemi.Models;
 
 namespace isMerkeziSistemi.Controllers
 {
+    [Authorize]
     public class UsersController : Controller
     {
         private UsersModel usersModel = new UsersModel();

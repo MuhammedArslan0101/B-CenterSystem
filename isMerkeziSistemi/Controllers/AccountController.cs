@@ -70,7 +70,12 @@ namespace isMerkeziSistemi.Controllers
         {
             if (!ModelState.IsValid)
             {
+               
                 return View(model);
+            }
+            else
+            {
+                TempData["loginFaild"] = "Şifre yada adı hatadır";
             }
 
             // This doesn't count login failures towards account lockout

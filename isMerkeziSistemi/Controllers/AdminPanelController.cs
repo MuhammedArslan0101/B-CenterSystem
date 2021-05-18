@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace isMerkeziSistemi.Controllers
 {
+    [Authorize]
     public class AdminPanelController : Controller
     {
         // GET: AdminPanel
